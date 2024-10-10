@@ -1,0 +1,120 @@
+/* Основной стиль страницы */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Шапка страницы */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Контейнер для новостей */
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.modal {
+    display: none; /* Скрываем модальное окно по умолчанию */
+    position: fixed; /* Позиция фиксирована */
+    z-index: 1000; /* Уровень по умолчанию */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ширина на весь экран */
+    height: 100%; /* Высота на весь экран */
+    overflow: auto; /* Скроллинг, если нужно */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+}
+
+.modal-content {
+    background-color: white; /* Цвет фона контента */
+    margin: 15% auto; /* Отступ сверху и по центру */
+    padding: 20px; /* Отступы внутри */
+    border: 1px solid #888; /* Рамка */
+    width: 80%; /* Ширина модального окна */
+    max-height: 80vh; /* Максимальная высота */
+    overflow-y: auto; /* Скроллинг по вертикали, если нужно */
+}
+
+/* Карточка новости */
+.news-item {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Внутри карточки */
+.news-item h2 {
+    font-size: 1.5rem;
+    margin: 15px;
+    color: #007BFF;
+}
+
+.news-item p {
+    font-size: 1rem;
+    margin: 15px;
+    color: #555;
+}
+
+.news-item small {
+    display: block;
+    margin: 15px;
+    color: #999;
+    font-style: italic;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 600px) {
+    .news-item {
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+/* Стили для кнопки "Читать далее" */
+#readMore {
+    background-color: #007BFF; /* Цвет фона кнопки */
+    color: white; /* Цвет текста */
+    border: none; /* Убираем рамку */
+    border-radius: 5px; /* Закругляем углы */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    cursor: pointer; /* Указатель на кнопке */
+    font-size: 16px; /* Размер шрифта */
+    transition: background-color 0.3s; /* Анимация при наведении */
+}
+
+#readMore:hover {
+    background-color: #0056b3; /* Цвет фона при наведении */
+}
+
+/* Стили для текста в модальном окне */
+.modal-content {
+    overflow-y: auto; /* Скроллинг для переполненного контента */
+    max-height: 80vh; /* Максимальная высота модального окна */
+    padding: 20px; /* Отступы вокруг текста */
+}
+
+#modalContent, #fullContent {
+    margin-bottom: 20px; /* Отступ снизу текста */
+    word-wrap: break-word; /* Перенос слов при необходимости */
+}
